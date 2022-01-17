@@ -1,0 +1,40 @@
+<!--
+<ul class="filter_panel">
+<p class="text-uppercase has-text-gray pv1 f6">filter by location</p>
+
+  <ul class="mb3 pa0">
+    <li class="list-group-item">
+      <%= link_to 'All', inventories_path, class: "button is-fullwidth is-dark" %>
+    </li>
+
+    <li class="panel-item">
+      <%= link_to 'Toronto', inventories_path(location_type: "Toronto"), class: "button is-fullwidth is-1" %>
+    </li>
+
+    <li class="panel-item">
+      <%= link_to 'Montreal', inventories_path(location_type: "Montreal"), class: "button is-fullwidth is-2" %>
+    </li>
+
+    <li class="panel-item">
+      <%= link_to 'Vancouver', inventories_path(location_type: "Vancouver"), class: "button is-fullwidth is-3" %>
+    </li>
+
+  </ul>
+</ul>
+-->
+<h4>Filter by Location</h4>
+<button type="button" class="btn btn-primary">
+  <%= link_to 'All', inventories_path, class: "button is-fullwidth is-dark", style: "color: #ffffff" %>
+</button>
+
+<button type="button" class="btn btn-secondary">
+  <%= link_to 'Toronto', inventories_path(location_type: "Toronto"), class: "button is-fullwidth is-1", style: "color: #ffffff" %>
+</button>
+
+<button type="button" class="btn btn-secondary">
+  <%= link_to 'Montreal', inventories_path(location_type: "Montreal"), class: "button is-fullwidth is-2", style: "color: #ffffff" %>
+</button>
+
+<button type="button" class="btn btn-secondary">
+  <%= link_to 'Vancouver', inventories_path(location_type: "Vancouver"), class: "button is-fullwidth is-3", style: "color: #ffffff" %>
+</button>

@@ -1,0 +1,18 @@
+<!-- Bootstrap Card View -->
+
+
+<div id = "<%= dom_id inventory %>" class="card bg-light mb-3" style="max-width: 1000px;">
+  <div class="card-header"><%= inventory.location_type %></div>
+  <div class="card-body">
+    <h5 class="card-title"><%= inventory.item_name%></h5>
+    <p class="card-text">
+      <strong>Quantity:</strong>
+      <%= inventory.quantity %>
+      </br>
+      <strong>Date added:</strong>
+      <%= inventory.date_added %>
+      </br>
+      <%= link_to "Edit this inventory", edit_inventory_path(inventory) %> 
+    </p>
+  </div>
+</div>

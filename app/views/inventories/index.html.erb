@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Inventories</h1>
+
+<div class="column is-2 bg-light" style="max-width: 1000px;">
+  <div class="pl3 pr1">
+    <%= render partial: 'filter_panel' %>
+  </div>
+</div>
+</br>
+<h5><%= link_to "New Inventory", new_inventory_path %> </h5>
+</br>
+<strong>Items sorted by date last added</strong>
+<div id="inventories">
+  <% @inventories.each do |inventory| %> 
+    <%= render inventory %>
+  <% end %>
+</div>
+
+
