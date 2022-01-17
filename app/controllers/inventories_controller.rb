@@ -8,6 +8,21 @@ class InventoriesController < ApplicationController
     else
       @inventories = Inventory.all.order("date_added desc")
     end
+    if params[:searchmin] && params[:searchmax]
+      @searchmin = params[:searchmin]
+      @searchmax = params[:searchmax]
+      #if invalid input return no results
+      if params[:searchmin] == ""
+        @inventories = @inventories.between_range(1, @searchmax)
+      elsif params[:searchmax] == ""
+        @inventories = @inventories.largerthan(@searchmin)
+      elsif params[:searchmin].to_i > params[:searchmax].to_i || @searchmin.to_i < 0|| @searchmax.to_i < 0
+        @inventories = @inventories.between_range(1, 1)
+      else
+        @inventories = @inventories.between_range(@searchmin, @searchmax)
+      end
+      
+    end
   end
 
   # GET /inventories/1 or /inventories/1.json
