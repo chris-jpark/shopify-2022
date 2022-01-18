@@ -1,5 +1,5 @@
 # README
-The webapp is running at:
+The webapp is running and hosted through the link below.
 Please access the link through any device with an internet connection to run and test the app. 
 
 https://rails-crud-shopify.herokuapp.com/
