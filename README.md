@@ -1,6 +1,7 @@
 # README
 The webapp is running at:
 Please access the link through any device with an internet connection to run and test the app. 
+
 https://rails-crud-shopify.herokuapp.com/
 
 This inventory manager allows users to add, edit, and remove inventory items.
