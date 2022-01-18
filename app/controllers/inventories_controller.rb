@@ -8,11 +8,16 @@ class InventoriesController < ApplicationController
     else
       @inventories = Inventory.all.order("date_added desc")
     end
+    if (params[:location_type] == "")
+      @inventories = Inventory.all.order("date_added desc")
+    end
     if params[:searchmin] && params[:searchmax]
       @searchmin = params[:searchmin]
       @searchmax = params[:searchmax]
       #if invalid input return no results
-      if params[:searchmin] == ""
+      if (params[:searchmin] == "") && (params[:searchmax] == "")
+        @inventories = @inventories
+      elsif params[:searchmin] == ""
         @inventories = @inventories.between_range(1, @searchmax)
       elsif params[:searchmax] == ""
         @inventories = @inventories.largerthan(@searchmin)
@@ -21,7 +26,7 @@ class InventoriesController < ApplicationController
       else
         @inventories = @inventories.between_range(@searchmin, @searchmax)
       end
-      
+
     end
   end
 
@@ -42,7 +47,7 @@ class InventoriesController < ApplicationController
   def create
     @inventory = Inventory.new(inventory_params)
     location_type = params[:location_type]
-  
+
 
 
     respond_to do |format|
